@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/code.cpp
+iostream
+-
+fstream
+-
+parser.hpp
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/parser.hpp
+register.hpp
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/register.hpp
+statement.hpp
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/statement.hpp
+
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/parser.hpp
+iostream
+-
+queue
+-
+register.hpp
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/register.hpp
+
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/register.hpp
+
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/statement.hpp
+register.hpp
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/register.hpp
+parser.hpp
+/Users/refraction/Desktop/ReFraction/ppca/RISC-V/RISC-V/parser.hpp
+
