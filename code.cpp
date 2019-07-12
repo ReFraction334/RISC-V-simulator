@@ -9,19 +9,39 @@
 #include "parser.hpp"
 #include "register.hpp"
 #include "statement.hpp"
-#define DEBUG
+#include "five-stage.hpp"
 
 int run_program()
 {
-    unsigned int nowCommand;
-    while((nowCommand = par.get_command()) != EndProgram)
+    int high = 1;
+    while (!finished)
     {
-        TypeName tn = judge_type(nowCommand);
-        Statement *st = new_statement(nowCommand,pc,tn);
-        st->running();
-        par.next_command();
-        delete(st);
+        if (high == 5)
+            WB(),--high;
+        if (high >= 4)
+            MEM();
+        if (high >= 3)
+            EX();
+        if (high >= 2)
+            ID();
+        if (high >= 1)
+            IF(),++high;
     }
+    WB();
+    MEM();
+    EX();
+    WB();
+    MEM();
+    WB();
+//    unsigned int nowCommand;
+//    while((nowCommand = par.get_command()) != EndProgram)
+//    {
+//        TypeName tn = judge_type(nowCommand);
+//        Statement *st = new_statement(nowCommand,pc,tn);
+//        st->running();
+//        par.next_command();
+//        delete(st);
+//    }
     return ((unsigned int)xRegister[10].val) & 255u;
 }
 
