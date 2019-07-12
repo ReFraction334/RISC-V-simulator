@@ -9,7 +9,7 @@
 #include <queue>
 #include "register.hpp"
 
-#define DEBUG
+//#define DEBUG
 class parser
 {
     int mem[0x20000];
@@ -21,7 +21,7 @@ public:
     {
         initialize_memory();
     }
-    unsigned int get_command();
+    unsigned int get_command(int NPC);
     void next_command(){    pc += 4;}
     int & get_memory(int n)
     {
@@ -57,10 +57,10 @@ void parser::initialize_memory()
         }
     }
 }
-unsigned int parser::get_command()
+unsigned int parser::get_command(int NPC)
 {
     unsigned int ans = 0;
-    for (int i = pc + 3; i >= pc ; --i)
+    for (int i = NPC + 3; i >= NPC ; --i)
     {
         ans <<= 8;
         ans += mem[i];
